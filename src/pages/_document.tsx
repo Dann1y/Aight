@@ -40,6 +40,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <style />
+          <title>Aight!</title>
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css"
