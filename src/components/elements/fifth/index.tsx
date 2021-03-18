@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { useIntersection } from "utils/hooks/use-intersection";
+import aboutMotions from "motions/about.motion";
+import { Mask } from "components/GlobalStyles";
 
 export default function Fifth() {
   const sectionRef = useRef();
@@ -12,14 +14,24 @@ export default function Fifth() {
   });
 
   return (
-    <Positioner>
-      <motion.h1>I'm Dann1y</motion.h1>
-      <motion.h2>Uh.. Just call me Danny 😉</motion.h2>
+    <Positioner
+      ref={sectionRef}
+      initial="hidden"
+      animate={visible ? "visible" : "hidden"}
+    >
+      <Mask h={10}>
+        <motion.h1 variants={aboutMotions.subText}>I'm Dann1y</motion.h1>
+      </Mask>
+      <motion.div variants={aboutMotions.aboutContainer}>
+        <motion.h2 variants={aboutMotions.aboutText}>
+          Uh.. Just call me Danny 😉
+        </motion.h2>
+      </motion.div>
     </Positioner>
   );
 }
 
-const Positioner = styled.div`
+const Positioner = styled(motion.div)`
   width: 100%;
   height: 100vh;
   display: flex;
