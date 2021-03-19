@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 import { useIntersection } from "utils/hooks/use-intersection";
 import aboutMotions from "motions/about.motion";
 import { Mask } from "components/GlobalStyles";
+import Tada from "react-reveal/Tada";
+import ImageGallery from "components/image-gallery";
 
 export default function Fifth() {
   const sectionRef = useRef();
 
   const { visible } = useIntersection(sectionRef, {
     threshold: 0.7,
-    bottom: false,
   });
 
   return (
@@ -19,8 +20,13 @@ export default function Fifth() {
       initial="hidden"
       animate={visible ? "visible" : "hidden"}
     >
-      <Mask h={10}>
-        <motion.h1 variants={aboutMotions.subText}>I'm Dann1y</motion.h1>
+      <ImageContainer>
+        <ImageGallery />
+      </ImageContainer>
+      <Mask h={11} style={{ padding: "0 6vh" }}>
+        <Tada>
+          <motion.h1 variants={aboutMotions.subText}>I'm Dann1y</motion.h1>
+        </Tada>
       </Mask>
       <motion.div variants={aboutMotions.aboutContainer}>
         <motion.h2 variants={aboutMotions.aboutText}>
@@ -47,8 +53,16 @@ const Positioner = styled(motion.div)`
   }
 
   h2 {
-    margin-top: 3vh;
     color: #fff;
     font-weight: 100;
   }
+`;
+
+const ImageContainer = styled.div`
+  width: 30vw;
+  height: 55vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
