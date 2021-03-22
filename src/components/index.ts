@@ -1,5 +1,6 @@
 export { default as Footer } from "./footer";
 export { default as Header } from "./header";
+export { default as ImageGallery } from "./image-gallery";
 
 export { default as First } from "./elements/first";
 export { default as Second } from "./elements/second";
