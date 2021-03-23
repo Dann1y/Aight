@@ -20,6 +20,7 @@ export default function Fifth() {
       initial="hidden"
       animate={visible ? "visible" : "hidden"}
     >
+      <Notice variants={aboutMotions.title}>Drag the image!⬇</Notice>
       <ImageContainer>
         <ImageGallery />
       </ImageContainer>
@@ -38,7 +39,7 @@ export default function Fifth() {
 }
 
 const Positioner = styled(motion.div)`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,6 +57,13 @@ const Positioner = styled(motion.div)`
     color: #fff;
     font-weight: 100;
   }
+`;
+
+const Notice = styled(motion.h2)`
+  color: #fff;
+  font-size: 2vh;
+  font-weight: 300;
+  margin: 0;
 `;
 
 const ImageContainer = styled.div`

@@ -12,7 +12,7 @@ export default function Third() {
   const sectionRef = useRef();
 
   const { visible } = useIntersection(sectionRef, {
-    threshold: 1,
+    threshold: 0.7,
   });
 
   const returnDescription = () => {
@@ -98,7 +98,7 @@ interface ItemProps {
 }
 
 const Positioner = styled(motion.div)`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;

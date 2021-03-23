@@ -62,7 +62,7 @@ const ImageGallery = () => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 100, damping: 30 },
+            x: { type: "spring", stiffness: 150, damping: 30 },
             opacity: { duration: 0.5 },
           }}
           drag="x"

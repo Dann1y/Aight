@@ -28,7 +28,7 @@ export default function Fourth() {
 }
 
 const Positioner = styled(motion.div)`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
