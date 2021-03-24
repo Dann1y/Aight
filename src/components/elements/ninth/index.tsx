@@ -49,8 +49,8 @@ const Positioner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("background/j.png");
-  background-size: cover;
+  /* background-image: url("background/j.png");
+  background-size: cover; */
 `;
 
 const Wrapper = styled.div`

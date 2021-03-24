@@ -26,8 +26,8 @@ const Positioner = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("background/g.png");
-  background-size: cover;
+  /* background-image: url("background/g.png");
+  background-size: cover; */
 `;
 
 const Wrapper = styled.div`

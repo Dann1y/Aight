@@ -15,8 +15,8 @@ const Positioner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("background/h.png");
-  background-size: cover;
+  /* background-image: url("background/h.png");
+  background-size: cover; */
 
   h1 {
     color: #fff;

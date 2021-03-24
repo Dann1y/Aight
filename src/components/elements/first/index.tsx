@@ -38,8 +38,8 @@ const Positioner = styled(motion.div)`
   align-items: center;
   justify-content: center;
   position: relative;
-  background-image: url("background/b.png");
-  background-size: cover;
+  /* background-image: url("background/b.png");
+  background-size: cover; */
 
   h3 {
     color: #fff;

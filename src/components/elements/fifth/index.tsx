@@ -45,8 +45,8 @@ const Positioner = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("background/f.png");
-  background-size: cover;
+  /* background-image: url("background/f.png");
+  background-size: cover; */
 
   h1 {
     font-size: 8vh;

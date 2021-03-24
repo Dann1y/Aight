@@ -27,8 +27,8 @@ const Positioner = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("background/l.png");
-  background-size: cover;
+  /* background-image: url("background/l.png");
+  background-size: cover; */
 
   h1 {
     color: #fff;

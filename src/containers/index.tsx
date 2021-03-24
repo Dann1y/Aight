@@ -17,4 +17,6 @@ export default function MappingContainer() {
 const Positioner = styled.div`
   width: 100%;
   height: 100%;
+  background-image: url("/background.png");
+  background-size: cover;
 `;
