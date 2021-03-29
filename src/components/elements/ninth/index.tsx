@@ -1,41 +1,76 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "@emotion/styled";
-import Icon from "components/icon";
+import { useIntersection } from "utils/hooks/use-intersection";
+import { motion } from "framer-motion";
+import aboutMotions from "motions/about.motion";
+import { Mask } from "components/GlobalStyles";
 
-const contestList = [
-  "GSM 제 4회 창의융합프로젝트 - 최우수상(2021.01.)",
-  "2020 Entrepreneur's Playground 창업놀이터 - 우수상(2020.12.)",
-  "한전KDN 2019 빛가람 에너지밸리 SW경진대회 - 장려상(2019.11.)",
+const returnDesc = () => [
+  <Desc variants={aboutMotions.aboutText}>
+    GSM 제 4회 창의융합프로젝트 - 최우수상(2021.01.)
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    2020 Entrepreneur's Playground 창업놀이터 - 우수상(2020.12.)
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    한전KDN 2019 빛가람 에너지밸리 SW경진대회 - 장려상(2019.11.)
+  </Desc>,
 ];
 
-const activityList = [
-  "대한민국 소프트웨어 대전 Olio 전시 (2020.12.02. ~ 2020.12.04.)",
-  "대한민국 소프트웨어 대전 Charger 전시(2019.12.04. ~ 2019.12.06.)",
-  "Pycon Korea 2019 참여 (2019.08.17.)",
-  "한국 MicroSoft 방문 (2019.07.12.)",
-  "한컴MDS 방문 (2019.07.10.)",
-  "Singapore ConnecTechAsia 2019 참여 (2019.06.20.)",
+const returnActivity = () => [
+  <Desc variants={aboutMotions.aboutText}>
+    대한민국 소프트웨어 대전 Olio 전시 (2020.12.02. ~ 2020.12.04.)
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    대한민국 소프트웨어 대전 Charger 전시(2019.12.04. ~ 2019.12.06.)
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    Pycon Korea 2019 참여 (2019.08.17.)
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    한국 MicroSoft 방문 (2019.07.12.)
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>한컴MDS 방문 (2019.07.10.)</Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    Singapore ConnecTechAsia 2019 참여 (2019.06.20.)
+  </Desc>,
 ];
 
 export default function Ninth() {
+  const sectionRef = useRef();
+
+  const { visible } = useIntersection(sectionRef, {
+    threshold: 0.7,
+  });
+
   return (
-    <Positioner>
+    <Positioner
+      ref={sectionRef}
+      initial="hidden"
+      animate={visible ? "visible" : "hidden"}
+    >
       <Wrapper>
         <LeftBox>
-          <h1>Experienced</h1>
+          <Mask h={9}>
+            <Title variants={aboutMotions.subText}>Experienced</Title>
+          </Mask>
         </LeftBox>
         <RightBox>
           <Content>
-            <h1>Contest</h1>
-            {contestList.map((i, ix) => (
-              <Desc key={ix}>{i}</Desc>
-            ))}
+            <Mask h={9}>
+              <Title variants={aboutMotions.subText}>Contest</Title>
+            </Mask>
+            <DescWrapper variants={aboutMotions.aboutContainer}>
+              {returnDesc()}
+            </DescWrapper>
           </Content>
           <Content>
-            <h1>Activity</h1>
-            {activityList.map((i, ix) => (
-              <Desc key={ix}>{i}</Desc>
-            ))}
+            <Mask h={9}>
+              <Title variants={aboutMotions.subText}>Activity</Title>
+            </Mask>
+            <DescWrapper variants={aboutMotions.aboutContainer}>
+              {returnActivity()}
+            </DescWrapper>
           </Content>
         </RightBox>
       </Wrapper>
@@ -43,14 +78,12 @@ export default function Ninth() {
   );
 }
 
-const Positioner = styled.div`
+const Positioner = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: url("background/j.png");
-  background-size: cover; */
 `;
 
 const Wrapper = styled.div`
@@ -66,12 +99,12 @@ const LeftBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
 
-  h1 {
-    font-size: 7vh;
-    font-weight: bold;
-    color: #fff;
-  }
+const Title = styled(motion.h1)`
+  font-size: 7vh;
+  font-weight: bold;
+  color: #fff;
 `;
 
 const RightBox = styled.div`
@@ -103,7 +136,9 @@ const Content = styled.div`
   }
 `;
 
-const Desc = styled.h2`
+const DescWrapper = styled(motion.div)``;
+
+const Desc = styled(motion.h2)`
   color: #fff;
   font-weight: 100;
 `;

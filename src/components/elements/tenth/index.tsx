@@ -1,65 +1,78 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "@emotion/styled";
 import Icon from "components/icon";
+import { useIntersection } from "utils/hooks/use-intersection";
+import { motion } from "framer-motion";
+import aboutMotions from "motions/about.motion";
+import { Mask } from "components/GlobalStyles";
 
-const orgList = [
-  {
-    title: "SHA",
-    task: "Club Manager (2019 ~ 2021)",
-    desc: (
-      <p>
-        As a club manager led the club successfully for 3 years.
-        <br />
-        Our club is the most popular in our school.
-        <br />
-        Olio was released as an internal project in the club. We have a blog
-        too! Click Here
-      </p>
-    ),
-  },
-  {
-    title: "Bridged",
-    task: "Opensource Contributor Member",
-    desc: (
-      <p>
-        As an open source contributor, I am a Bridged member.
-        <br />I saw the beginning of Bridged. It is steadily under maintenance.
-        <br />I participated in the development with the bridged.xyz ui
-        configuration.
-      </p>
-    ),
-  },
+const returnSha = () => [
+  <Title variants={aboutMotions.aboutText}>SHA</Title>,
+  <Task variants={aboutMotions.aboutText}>Club Manager (2019 ~ 2021)</Task>,
+  <Desc variants={aboutMotions.aboutText}>
+    As a club manager led the club successfully for 3 years.
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    Our club is the most popular in our school.
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    Olio was released as an internal project in the club. We have a blog too!
+    Click Here.
+  </Desc>,
+];
+
+const returnBridged = () => [
+  <Title variants={aboutMotions.aboutText}>Bridged</Title>,
+  <Task variants={aboutMotions.aboutText}>Opensource Contributor Member</Task>,
+  <Desc variants={aboutMotions.aboutText}>
+    As an open source contributor, I am a Bridged member.{" "}
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    I saw the beginning of Bridged. It is steadily under maintenance.
+  </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    I participated in the development with the bridged.xyz ui configuration.
+  </Desc>,
 ];
 
 export default function Tenth() {
+  const sectionRef = useRef();
+
+  const { visible } = useIntersection(sectionRef, {
+    threshold: 0.7,
+  });
+
   return (
-    <Positioner>
+    <Positioner
+      ref={sectionRef}
+      initial="hidden"
+      animate={visible ? "visible" : "hidden"}
+    >
       <Wrapper>
         <LeftBox>
-          {orgList.map((i, ix) => (
-            <Content key={ix}>
-              <h1>{i.title}</h1>
-              <Task>{i.task}</Task>
-              <Desc>{i.desc}</Desc>
-            </Content>
-          ))}
+          <Content variants={aboutMotions.aboutContainer}>
+            {returnSha()}
+          </Content>
+          <Content variants={aboutMotions.aboutContainer}>
+            {returnBridged()}
+          </Content>
         </LeftBox>
         <RightBox>
-          <h1>Club & Organization</h1>
+          <Mask h={9}>
+            <Title variants={aboutMotions.subText}>Club & Organization</Title>
+          </Mask>
         </RightBox>
       </Wrapper>
     </Positioner>
   );
 }
 
-const Positioner = styled.div`
+const Positioner = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: url("background/k.png");
-  background-size: cover; ; */
 `;
 
 const Wrapper = styled.div`
@@ -92,25 +105,26 @@ const RightBox = styled.div`
   }
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  h1 {
-    font-size: 5vh;
-    color: #fff;
-  }
 `;
 
-const Task = styled.h2`
+const Title = styled(motion.h1)`
+  font-size: 5vh;
+  color: #fff;
+`;
+
+const Task = styled(motion.h2)`
   color: #fff;
   font-weight: 400;
 `;
 
-const Desc = styled.h3`
+const Desc = styled(motion.h3)`
   color: #fff;
   font-weight: 100;
+  margin: 0px;
 `;

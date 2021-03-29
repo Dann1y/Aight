@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "@emotion/styled";
 import Icon from "components/icon";
 import Tada from "react-reveal/Tada";
+import { motion } from "framer-motion";
+import { useIntersection } from "utils/hooks/use-intersection";
+import aboutMotions from "motions/about.motion";
+import { Mask } from "components/GlobalStyles";
 
 export default function Eleventh() {
+  const sectionRef = useRef();
+
+  const { visible } = useIntersection(sectionRef, {
+    threshold: 0.7,
+  });
   return (
-    <Positioner>
-      <h1>Contact Me</h1>
-      <h3>
+    <Positioner
+      ref={sectionRef}
+      initial="hidden"
+      animate={visible ? "visible" : "hidden"}
+    >
+      <Mask h={9}>
+        <Title variants={aboutMotions.subText}>Contact Me</Title>
+      </Mask>
+      <Desc variants={aboutMotions.aboutText}>
         If you looking for young and cool developer, You’d better contact me. 😄
-      </h3>
+      </Desc>
       <Tada>
-        <Email>
+        <Email variants={aboutMotions.subText}>
           <Icon name="email" />
           <span>skypedanny@naver.com</span>
         </Email>
@@ -20,36 +35,34 @@ export default function Eleventh() {
   );
 }
 
-const Positioner = styled.div`
+const Positioner = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-image: url("background/l.png");
-  background-size: cover; */
-
-  h1 {
-    color: #fff;
-    font-size: 7vh;
-  }
-
-  h3 {
-    color: #fff;
-    font-size: 4vh;
-    font-weight: 100;
-  }
 
   span {
     color: #fff;
-    font-size: 3vh;
+    font-size: 2vh;
     font-weight: 100;
     margin-left: 5px;
   }
 `;
 
-const Email = styled.div`
+const Title = styled(motion.h1)`
+  color: #fff;
+  font-size: 7vh;
+`;
+
+const Desc = styled(motion.h3)`
+  color: #fff;
+  font-size: 3vh;
+  font-weight: 100;
+`;
+
+const Email = styled(motion.div)`
   display: flex;
   align-items: center;
 `;
