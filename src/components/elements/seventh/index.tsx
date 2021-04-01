@@ -11,7 +11,6 @@ export default function Seventh() {
 
   const { visible } = useIntersection(sectionRef, {
     threshold: 0.7,
-    bottom: false,
   });
   return (
     <Positioner

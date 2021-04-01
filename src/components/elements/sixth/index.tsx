@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useIntersection } from "utils/hooks/use-intersection";
 import aboutMotions from "motions/about.motion";
 import { Mask } from "components/GlobalStyles";
-import Project from "components/project";
+import ProjectList from "components/project-list";
 
 export default function Sixth() {
   const sectionRef = useRef();
@@ -30,11 +30,9 @@ export default function Sixth() {
             </Desc>
           </motion.div>
         </DescWrapper>
-        <Mask style={{ flex: 1 }} h={47}>
-          <ProjectWrapper variants={aboutMotions.subText}>
-            <Project />
-          </ProjectWrapper>
-        </Mask>
+        <ProjectWrapper>
+          <ProjectList />
+        </ProjectWrapper>
       </Wrapper>
     </Positioner>
   );
@@ -46,6 +44,7 @@ const Positioner = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
@@ -53,13 +52,12 @@ const Wrapper = styled.div`
   height: 90%;
   display: flex;
   justify-content: center;
-
-  border: 1px solid #fff;
+  align-items: center;
 `;
 
 const DescWrapper = styled(motion.div)`
   flex: 1;
-  height: 44;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,10 +77,6 @@ const Desc = styled(motion.div)`
 `;
 
 const ProjectWrapper = styled(motion.div)`
-  width: 100%;
-  height: 44vh;
-  margin-top: 3vh;
-  display: flex;
-  overflow-x: auto;
-  z-index: 3;
+  flex: 1;
+  height: 90%;
 `;
