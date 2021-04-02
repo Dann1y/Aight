@@ -1,41 +1,57 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 interface ProjectProps {
-  title: string;
-  backgroundPath?: string;
+  backgroundImage: string;
 }
 
 export default function Project(props: ProjectProps) {
-  const { title } = props;
+  const { backgroundImage } = props;
 
   return (
-    <Card>
-      <Header>{title}</Header>
-    </Card>
+    <Positioner>
+      <Wrapper background={backgroundImage} />
+    </Positioner>
   );
 }
 
-const Card = styled.div`
-  min-width: 35%;
-  height: 100%;
-  border-radius: 40px;
-  position: relative;
-  cursor: pointer;
-  background-color: #3d3d3d;
-  margin-right: 5vw;
-  z-index: 999;
+interface WrapperProps {
+  background: string;
+}
 
-  &:first-of-type {
-    margin-left: 2.5%;
+const Positioner = styled.div`
+  width: 70%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  background: linear-gradient(#c119c7, #37afdf);
+  //background: linear-gradient(#c119c7, #);
+  opacity: 0.9;
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px,
+    rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
+    rgba(240, 46, 170, 0.05) 0px 25px;
+
+  :hover {
+    width: 80%;
+    height: 100%;
+    transition: all 0.3s;
+    opacity: 1;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+      rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+      rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
   }
+  transition: all 0.3s;
 `;
 
-const Header = styled.h1`
-  position: absolute;
-  top: 0px;
-  left: -40px;
-  color: #fff;
-  font-size: 7vh;
-  font-weight: 800;
+const Wrapper = styled.div<WrapperProps>`
+  width: 100%;
+  height: 80%;
+
+  background-image: url(${(p) => p.background});
+  background-size: cover;
 `;
