@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
+import ProjectModal from "components/project-modal";
+import { useModalContext } from "utils/contexts/modal-context";
 
 interface ProjectProps {
   backgroundImage: string;
@@ -30,7 +31,7 @@ const Positioner = styled.div`
   justify-content: center;
   border-radius: 10%;
   background: linear-gradient(#c119c7, #37afdf);
-  //background: linear-gradient(#c119c7, #);
+
   opacity: 0.9;
   box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px,
     rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
