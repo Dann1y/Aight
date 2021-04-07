@@ -14,3 +14,10 @@ export const logoImages = [
   "/logo-image/ONDO.png",
   "/logo-image/Charger.png",
 ];
+
+export const mockImages = [
+  "/mock-image/BridgedMock.png",
+  "/mock-image/OlioMock.png",
+  "/mock-image/OndoMock.png",
+  "/mock-image/ChargerMock.png",
+];
