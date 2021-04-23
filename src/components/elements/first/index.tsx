@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import Icon from "components/icon";
 
 export default function First() {
   return (
     <Positioner>
-      <Image src="/logo.png" width="740" height="500" />
+      <Icon name="logo" />
     </Positioner>
   );
 }

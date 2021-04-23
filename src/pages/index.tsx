@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import BackgroundContainer from "containers";
 import { componentIndexing } from "utils/toolkit";
 import ReactFullpage from "@fullpage/react-fullpage";
+import { Footer } from "components";
 
 function importAll(r) {
   return r.keys().map(r);
@@ -14,19 +15,22 @@ const SectionImages: Array<string> = importAll(
 
 function index() {
   return (
-    <ReactFullpage
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            {SectionImages.sort().map((i, ix) => (
-              <BackgroundContainer imagePath={i}>
-                <Wrapper>{componentIndexing[ix]}</Wrapper>
-              </BackgroundContainer>
-            ))}
-          </ReactFullpage.Wrapper>
-        );
-      }}
-    />
+    <div>
+      <ReactFullpage
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              {SectionImages.sort().map((i, ix) => (
+                <BackgroundContainer imagePath={i}>
+                  <Wrapper>{componentIndexing[ix]}</Wrapper>
+                </BackgroundContainer>
+              ))}
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
+      <Footer />
+    </div>
   );
 }
 

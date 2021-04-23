@@ -2,11 +2,35 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const descList = {
-  trendy: `I know what is trendy and I do.\n I will prove it through the way I work.\n Communicates well and results are good.\nYou've never seen anyone as cool as me😎`,
-  growing:
-    "Everyone makes mistakes. And it's divided into two categories: fix mistakes or keep making mistakes. I’m the first one and grows to the next level. Never get frustrated with mistakes.",
-  fire:
-    "I'm on fire. This fire always makes great results. See how much potential I have The fire is getting bigger",
+  trendy: (
+    <p>
+      I know what is trendy and I do.
+      <br />
+      I will prove it through the way I work.
+      <br />
+      Communicates well and results are good.You've never seen anyone as cool as
+      me😎
+    </p>
+  ),
+  growing: (
+    <p>
+      Everyone makes mistakes.
+      <br />
+      And it's divided into two categories: fix mistakes or keep making
+      mistakes.
+      <br />
+      I’m the first one and grows to the next level.
+      <br />
+      Never get frustrated with mistakes.
+    </p>
+  ),
+  fire: (
+    <p>
+      I'm on fire. This fire always makes great results.
+      <br />
+      See how much potential I have The fire is getting bigger
+    </p>
+  ),
 };
 
 export default function Third() {
@@ -84,4 +108,5 @@ const Content = styled.h1`
   text-align: center;
   color: #fff;
   font-size: 3.2vh;
+  font-weight: 100;
 `;

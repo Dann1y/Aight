@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
+import Fade from "react-reveal/Fade";
 
 export default function Second() {
   return (
     <Positioner>
-      <h1>Do it when you have time to think.</h1>
+      <Fade bottom>
+        <Sentence>Do it when you have time to think</Sentence>
+      </Fade>
     </Positioner>
   );
 }
@@ -15,23 +18,9 @@ const Positioner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
 
-  h1 {
-    font-size: 8vh;
-    color: #ffffff;
-    animation-duration: 3s;
-    animation-name: slidein;
-  }
-
-  @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
+const Sentence = styled.div`
+  font-size: 8vh;
+  color: #ffffff;
 `;

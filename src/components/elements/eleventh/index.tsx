@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Icon from "components/icon";
+import Tada from "react-reveal/Tada";
 
 export default function Eleventh() {
   return (
@@ -9,10 +10,12 @@ export default function Eleventh() {
       <h3>
         If you looking for young and cool developer, You’d better contact me. 😄
       </h3>
-      <Email>
-        <Icon name="email" />
-        <span>skypedanny@naver.com</span>
-      </Email>
+      <Tada>
+        <Email>
+          <Icon name="email" />
+          <span>skypedanny@naver.com</span>
+        </Email>
+      </Tada>
     </Positioner>
   );
 }
