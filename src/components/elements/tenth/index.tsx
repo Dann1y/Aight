@@ -36,15 +36,13 @@ export default function Tenth() {
     <Positioner>
       <Wrapper>
         <LeftBox>
-          <Content>
-            {orgList.map((i) => (
-              <Content>
-                <h1>{i.title}</h1>
-                <Task>{i.task}</Task>
-                <Desc>{i.desc}</Desc>
-              </Content>
-            ))}
-          </Content>
+          {orgList.map((i, ix) => (
+            <Content key={ix}>
+              <h1>{i.title}</h1>
+              <Task>{i.task}</Task>
+              <Desc>{i.desc}</Desc>
+            </Content>
+          ))}
         </LeftBox>
         <RightBox>
           <h1>Club & Organization</h1>
