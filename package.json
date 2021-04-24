@@ -12,7 +12,7 @@
     "@emotion/styled": "^11.0.0",
     "@fullpage/react-fullpage": "^0.1.19",
     "@types/webpack-env": "^1.16.0",
-    "framer-motion": "^4.1.6",
+    "framer-motion": "^4.1.9",
     "next": "10.0.4",
     "next-assets-import": "^0.0.2",
     "react": "17.0.1",
