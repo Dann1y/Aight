@@ -21,11 +21,13 @@ export default function Sixth() {
 
 const Positioner = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("background/g.png");
+  background-size: cover;
 `;
 
 const Wrapper = styled.div`

@@ -11,10 +11,12 @@ export default function Seventh() {
 
 const Positioner = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("background/h.png");
+  background-size: cover;
 
   h1 {
     color: #fff;

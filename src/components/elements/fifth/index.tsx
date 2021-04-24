@@ -5,7 +5,6 @@ export default function Fifth() {
   return (
     <Positioner>
       <h1>I'm Dann1y</h1>
-
       <h2>Uh.. Just call me Danny 😉</h2>
     </Positioner>
   );
@@ -13,11 +12,13 @@ export default function Fifth() {
 
 const Positioner = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url("background/f.png");
+  background-size: cover;
 
   h1 {
     font-size: 8vh;

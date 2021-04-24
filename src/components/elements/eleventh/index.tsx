@@ -22,11 +22,13 @@ export default function Eleventh() {
 
 const Positioner = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url("background/m.png");
+  background-size: cover;
 
   h1 {
     color: #fff;

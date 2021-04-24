@@ -54,10 +54,12 @@ export default function Tenth() {
 
 const Positioner = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("background/l.png");
+  background-size: cover; ;
 `;
 
 const Wrapper = styled.div`
