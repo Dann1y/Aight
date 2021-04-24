@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { DESC_LIST } from "utils/constants";
 import Fade from "react-reveal/Fade";
+import { motion } from "framer-motion";
 
 export default function Third() {
   const [current, setCurrent] = useState("Trendy");
@@ -73,7 +74,7 @@ const Navigation = styled.div`
   height: 20%;
 `;
 
-const Item = styled.h1<ItemProps>`
+const Item = styled(motion.h1)<ItemProps>`
   font-size: 5vh;
   color: #524f4f;
   background: ${(p) =>

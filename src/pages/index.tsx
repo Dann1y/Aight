@@ -34,6 +34,22 @@ function index() {
   );
 }
 
+// function index() {
+//   return (
+//     <div>
+//       <ReactFullpage.Wrapper>
+//         {SectionImages.sort().map((i, ix) => (
+//           <BackgroundContainer imagePath={i}>
+//             <Wrapper>{componentIndexing[ix]}</Wrapper>
+//           </BackgroundContainer>
+//         ))}
+//       </ReactFullpage.Wrapper>
+//       );
+//       <Footer />
+//     </div>
+//   );
+// }
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;

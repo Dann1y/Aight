@@ -1,14 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Image from "next/image";
-import Icon from "components/icon";
 
 export default function First() {
-  return (
-    <Positioner>
-      <Icon name="logo" />
-    </Positioner>
-  );
+  return <Positioner></Positioner>;
 }
 
 const Positioner = styled.div`
