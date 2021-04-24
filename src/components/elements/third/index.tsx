@@ -1,53 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-
-const descList = {
-  trendy: (
-    <p>
-      I know what is trendy and I do.
-      <br />
-      I will prove it through the way I work.
-      <br />
-      Communicates well and results are good.You've never seen anyone as cool as
-      me😎
-    </p>
-  ),
-  growing: (
-    <p>
-      Everyone makes mistakes.
-      <br />
-      And it's divided into two categories: fix mistakes or keep making
-      mistakes.
-      <br />
-      I’m the first one and grows to the next level.
-      <br />
-      Never get frustrated with mistakes.
-    </p>
-  ),
-  fire: (
-    <p>
-      I'm on fire. This fire always makes great results.
-      <br />
-      See how much potential I have The fire is getting bigger
-    </p>
-  ),
-};
+import { DESC_LIST } from "utils/constants";
+import Fade from "react-reveal/Fade";
 
 export default function Third() {
+  const [current, setCurrent] = useState("Trendy");
+
+  useEffect(() => {
+    <Fade />;
+  });
+
+  const returnDescription = () => {
+    switch (current) {
+      case "Trendy":
+        return DESC_LIST[0].desc;
+      case "Growing":
+        return DESC_LIST[1].desc;
+      case "Fire":
+        return DESC_LIST[2].desc;
+    }
+  };
+
   return (
     <Positioner>
       <Wrapper>
         <Navigation>
-          <Item>Trendy</Item>
-          <Item>Growing</Item>
-          <Item>Fire</Item>
+          {DESC_LIST.map((i, ix) => (
+            <Item
+              key={ix}
+              onClick={() => setCurrent(i.title)}
+              isActive={current === i.title}
+            >
+              {i.title}
+            </Item>
+          ))}
         </Navigation>
-        <Desc>
-          <Content>{descList.trendy}</Content>
-        </Desc>
+        <Fade top>
+          <Desc>
+            <Content>{returnDescription()}</Content>
+          </Desc>
+        </Fade>
       </Wrapper>
     </Positioner>
   );
+}
+
+interface ItemProps {
+  isActive: Boolean;
 }
 
 const Positioner = styled.div`
@@ -74,22 +73,19 @@ const Navigation = styled.div`
   height: 20%;
 `;
 
-const Item = styled.h1`
+const Item = styled.h1<ItemProps>`
   font-size: 5vh;
-  background: rgb(24, 210, 224);
-  background: linear-gradient(
+  color: #524f4f;
+  background: ${(p) =>
+    p.isActive
+      ? `linear-gradient(
     180deg,
     rgba(24, 210, 224, 1) 20%,
     rgba(243, 18, 254, 1) 100%
-  );
+  )`
+      : `#524f4f`};
 
-  /* background: rgb(238, 174, 202);
-  background: linear-gradient(
-    180deg,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  ); */
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
 `;
@@ -100,6 +96,7 @@ const Desc = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 5vh;
 `;
 
 const Content = styled.h1`
