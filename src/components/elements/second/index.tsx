@@ -8,7 +8,7 @@ export default function Second() {
   const sectionRef = useRef();
 
   const { visible } = useIntersection(sectionRef, {
-    threshold: 1,
+    threshold: 0.7,
     bottom: false,
   });
 
@@ -44,7 +44,6 @@ const Positioner = styled(motion.div)`
   align-items: center;
   justify-content: center;
   position: relative;
-
   h3 {
     color: #fff;
     font-weight: 100;
