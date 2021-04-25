@@ -9,8 +9,8 @@ export const myImages = [
 ];
 
 export const logoImages = [
-  "logo-image/Bridged.png",
-  "logo-image/Olio.png",
-  "logo-image/ONDO.png",
-  "logo-image/Charger.png",
+  "/logo-image/Bridged.png",
+  "/logo-image/Olio.png",
+  "/logo-image/ONDO.png",
+  "/logo-image/Charger.png",
 ];
