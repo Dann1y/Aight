@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import Project from "components/project";
 import { useIntersection } from "utils/hooks/use-intersection";
@@ -28,14 +28,12 @@ const projectItem = [
 
 export default function ProjectList() {
   const sectionRef = useRef();
-  const [state, setState] = useState("");
-
   const { addModal } = useModalContext();
 
-  const handleClickProject = useCallback(() => {
+  const handleClickProject = useCallback((ix: number) => {
     addModal({
       title: "",
-      element: <ProjectModal />,
+      element: <ProjectModal currentState={ix} />,
       showOnlyBody: true,
       width: "1150px",
       height: "697px",
@@ -54,12 +52,12 @@ export default function ProjectList() {
       variants={aboutMotions.aboutContainer}
     >
       {projectItem.map((i, ix) => (
-        <Wrapper>
+        <Wrapper key={ix}>
           <ProjectWrapper
-            onClick={() => handleClickProject()}
+            onClick={() => handleClickProject(ix)}
             variants={aboutMotions.aboutText}
           >
-            <Project backgroundImage={i.backgroundImage} key={ix} />
+            <Project backgroundImage={i.backgroundImage} />
           </ProjectWrapper>
         </Wrapper>
       ))}

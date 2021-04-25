@@ -11,6 +11,4 @@ const Postioner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("background/a.png");
-  background-size: cover;
 `;

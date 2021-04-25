@@ -23,6 +23,7 @@ interface WrapperProps {
 
 const Positioner = styled.div`
   width: 70%;
+  min-width: 25vh;
   height: 90%;
   display: flex;
   flex-direction: column;
