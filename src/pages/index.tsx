@@ -16,9 +16,17 @@ function index() {
           );
         }}
       />
-      <Footer />
     </div>
   );
 }
+
+// function index() {
+//   return (
+//     <div>
+//       <MappingContainer />
+//       <Footer />
+//     </div>
+//   );
+// }
 
 export default index;

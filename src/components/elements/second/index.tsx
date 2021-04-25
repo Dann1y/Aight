@@ -23,8 +23,8 @@ export default function Second() {
           Do it when you have time to think
         </Sentence>
       </Mask>
-      <Mask h={3}>
-        <motion.h3 variants={aboutMotions.subText}>
+      <Mask h={3} variants={aboutMotions.aboutContainer}>
+        <motion.h3 variants={aboutMotions.aboutText}>
           yes, this is my motto
         </motion.h3>
       </Mask>
@@ -53,7 +53,7 @@ const Positioner = styled(motion.div)`
   }
 `;
 
-const Mask = styled.div<MaskProps>`
+const Mask = styled(motion.div)<MaskProps>`
   height: ${(p) => p.h}vh;
   overflow: hidden;
 `;

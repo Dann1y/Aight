@@ -58,7 +58,7 @@ const Positioner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("background/l.png");
+  background-image: url("background/k.png");
   background-size: cover; ;
 `;
 

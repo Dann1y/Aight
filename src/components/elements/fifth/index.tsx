@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
+import { useIntersection } from "utils/hooks/use-intersection";
 
 export default function Fifth() {
+  const sectionRef = useRef();
+
+  const { visible } = useIntersection(sectionRef, {
+    threshold: 0.7,
+    bottom: false,
+  });
+
   return (
     <Positioner>
-      <h1>I'm Dann1y</h1>
-      <h2>Uh.. Just call me Danny 😉</h2>
+      <motion.h1>I'm Dann1y</motion.h1>
+      <motion.h2>Uh.. Just call me Danny 😉</motion.h2>
     </Positioner>
   );
 }

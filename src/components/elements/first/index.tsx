@@ -8,8 +8,7 @@ export default function First() {
   const sectionRef = useRef();
 
   const { visible } = useIntersection(sectionRef, {
-    threshold: 1,
-    bottom: false,
+    threshold: 0.7,
   });
 
   return (

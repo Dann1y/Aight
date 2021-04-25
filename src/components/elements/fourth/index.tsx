@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "@emotion/styled";
+import { useIntersection } from "utils/hooks/use-intersection";
+import { motion } from "framer-motion";
+import aboutMotions from "motions/about.motion";
+import Pulse from "react-reveal/Pulse";
 
 export default function Fourth() {
+  const sectionRef = useRef();
+
+  const { visible } = useIntersection(sectionRef, {
+    threshold: 1,
+  });
+
   return (
-    <Positioner>
-      <h1>So, What is your name?</h1>
+    <Positioner
+      ref={sectionRef}
+      initial="hidden"
+      animate={visible ? "visible" : "hidden"}
+    >
+      <Pulse>
+        <motion.div variants={aboutMotions.subText}>
+          So, What's your name?
+        </motion.div>
+      </Pulse>
     </Positioner>
   );
 }
 
-const Positioner = styled.div`
+const Positioner = styled(motion.div)`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -18,7 +36,7 @@ const Positioner = styled.div`
   background-image: url("background/e.png");
   background-size: cover;
 
-  h1 {
+  div {
     font-size: 8vh;
     color: #fff;
   }

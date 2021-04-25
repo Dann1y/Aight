@@ -1,46 +1,93 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { DESC_LIST } from "utils/constants";
 import Fade from "react-reveal/Fade";
 import { motion } from "framer-motion";
+import { useIntersection } from "utils/hooks/use-intersection";
+import aboutMotions from "motions/about.motion";
+import { Mask } from "components/GlobalStyles";
 
 export default function Third() {
   const [current, setCurrent] = useState("Trendy");
+  const sectionRef = useRef();
 
-  useEffect(() => {
-    <Fade />;
+  const { visible } = useIntersection(sectionRef, {
+    threshold: 1,
   });
 
   const returnDescription = () => {
     switch (current) {
       case "Trendy":
-        return DESC_LIST[0].desc;
+        return (
+          <ContentWrapper>
+            <Content variants={aboutMotions.aboutText}>
+              I know what is trendy and I do.
+            </Content>
+            <Content variants={aboutMotions.aboutText}>
+              I will prove it through the way I work.
+            </Content>
+            <Content variants={aboutMotions.aboutText}>
+              Communicates well and results are good. <br />
+              You've never seen anyone as cool as me😎
+            </Content>
+          </ContentWrapper>
+        );
       case "Growing":
-        return DESC_LIST[1].desc;
+        return (
+          <ContentWrapper>
+            <Content variants={aboutMotions.aboutText}>
+              Everyone makes mistakes.
+            </Content>
+            <Content variants={aboutMotions.aboutText}>
+              And it's divided into two categories:
+              <br />
+              fix mistakes or keep making mistakes.
+            </Content>
+            <Content variants={aboutMotions.aboutText}>
+              I’m the first one and grows to the next level. <br />
+              Never get frustrated with mistakes.
+            </Content>
+          </ContentWrapper>
+        );
       case "Fire":
-        return DESC_LIST[2].desc;
+        return (
+          <ContentWrapper>
+            <Content variants={aboutMotions.aboutText}>
+              I'm on fire 😎🔥 <br />
+              This fire always makes great results.
+            </Content>
+            <Content variants={aboutMotions.aboutText}>
+              See how much potential I have The fire is getting bigger
+            </Content>
+          </ContentWrapper>
+        );
     }
   };
 
   return (
-    <Positioner>
+    <Positioner
+      ref={sectionRef}
+      initial="hidden"
+      animate={visible ? "visible" : "hidden"}
+    >
       <Wrapper>
-        <Navigation>
-          {DESC_LIST.map((i, ix) => (
-            <Item
-              key={ix}
-              onClick={() => setCurrent(i.title)}
-              isActive={current === i.title}
-            >
-              {i.title}
-            </Item>
-          ))}
-        </Navigation>
-        <Fade top>
-          <Desc>
-            <Content>{returnDescription()}</Content>
-          </Desc>
-        </Fade>
+        <Mask h={7}>
+          <Navigation>
+            {DESC_LIST.map((i, ix) => (
+              <Item
+                key={ix}
+                onClick={() => setCurrent(i.title)}
+                isActive={current === i.title}
+                variants={aboutMotions.subText}
+              >
+                {i.title}
+              </Item>
+            ))}
+          </Navigation>
+        </Mask>
+        <Desc variants={aboutMotions.aboutContainer}>
+          {returnDescription()}
+        </Desc>
       </Wrapper>
     </Positioner>
   );
@@ -50,7 +97,7 @@ interface ItemProps {
   isActive: Boolean;
 }
 
-const Positioner = styled.div`
+const Positioner = styled(motion.div)`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -71,9 +118,10 @@ const Wrapper = styled.div`
 const Navigation = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 10%;
   justify-content: space-between;
-  height: 20%;
+  padding: 0 10%;
+  height: 100%;
+  margin-right: 7vh;
 `;
 
 const Item = styled(motion.h1)<ItemProps>`
@@ -91,18 +139,27 @@ const Item = styled(motion.h1)<ItemProps>`
   background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
+  margin: 0;
 `;
 
-const Desc = styled.div`
+const Desc = styled(motion.div)`
   width: 100%;
-  height: 80%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 5vh;
 `;
 
-const Content = styled.h1`
+const Content = styled(motion.div)`
   width: 80%;
   height: 70%;
   text-align: center;
