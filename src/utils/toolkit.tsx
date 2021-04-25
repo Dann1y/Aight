@@ -11,10 +11,11 @@ import {
   Sixth,
   Tenth,
   Third,
+  Header,
 } from "components";
 
 export const componentsReturn = [
-  <></>,
+  <Header />,
   <First />,
   <Second />,
   <Third />,
