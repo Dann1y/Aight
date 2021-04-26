@@ -2,7 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import { PROJECT_LIST } from "utils/constants";
 import Image from "next/image";
-import { logoImages } from "utils/image-data";
+import { mockImages } from "utils/image-data";
+import Icon from "components/icon";
+import { GitIcon } from "components/GlobalStyles";
 
 interface ProjectModalProps {
   currentState: number;
@@ -13,16 +15,23 @@ export default function ProjectModal(props: ProjectModalProps) {
 
   return (
     <Postioner>
+      <Header>
+        <Title>{PROJECT_LIST[currentState].title}</Title>
+        <Etc>{PROJECT_LIST[currentState].etc}</Etc>
+      </Header>
       <Wrapper>
-        <ImageWrapper>
-          <Image width={330} height={330} src={logoImages[currentState]} />
-        </ImageWrapper>
+        <LeftCard>
+          <ImageWrapper>
+            <Image width={630} height={400} src={mockImages[currentState]} />
+          </ImageWrapper>
+        </LeftCard>
         <RightCard>
           <InfoWrapper>
-            <Title>{PROJECT_LIST[currentState].title}</Title>
             <Role>{PROJECT_LIST[currentState].role}</Role>
             <Desc>{PROJECT_LIST[currentState].desc}</Desc>
-            <Etc>{PROJECT_LIST[currentState].etc}</Etc>
+            <Git>
+              <GitIcon />
+            </Git>
           </InfoWrapper>
         </RightCard>
       </Wrapper>
@@ -33,29 +42,47 @@ export default function ProjectModal(props: ProjectModalProps) {
 const Postioner = styled.div`
   width: 100%;
   height: 100%;
-  padding: 4%;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Header = styled.div`
+  display: flex;
+  vertical-align: bottom;
+  align-items: baseline;
+  padding-left: 2%;
 `;
 
 const Wrapper = styled.div`
+  height: 90%;
   display: flex;
-  height: 100%;
   align-items: center;
 `;
 
-const ImageWrapper = styled.div`
-  flex: 0.8;
-  height: 70%;
+const LeftCard = styled.div`
+  flex: 1;
+  height: 100%;
   display: flex;
-  border-radius: 10%;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin-top: 2vh;
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 `;
 
 const RightCard = styled.div`
   flex: 1;
+  margin-left: 3%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -64,30 +91,43 @@ const RightCard = styled.div`
 `;
 
 const InfoWrapper = styled.div`
-  width: 70%;
-  height: 100%;
+  width: 90%;
+  height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
 `;
 
 const Title = styled.h1`
   color: #000;
+  font-size: 6vh;
+  font-weight: bold;
   margin: 0;
 `;
 
-const Role = styled.h2`
+const Etc = styled.div`
   color: #000;
   margin: 0;
+  font-size: 2vh;
+  margin-left: 3vw;
+  height: 3vh;
+`;
+
+const Role = styled.h1`
+  color: #000;
+  font-weight: bold;
+  font-size: 4vh;
 `;
 
 const Desc = styled.h3`
   color: #000;
-  margin: 0;
+  margin: 3vh 0;
 `;
 
-const Etc = styled.h2`
-  color: #000;
-  margin: 0;
+const Git = styled.div`
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
 `;

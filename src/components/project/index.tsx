@@ -1,7 +1,5 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import ProjectModal from "components/project-modal";
-import { useModalContext } from "utils/contexts/modal-context";
 
 interface ProjectProps {
   backgroundImage: string;

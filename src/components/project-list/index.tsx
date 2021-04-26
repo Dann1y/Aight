@@ -35,7 +35,7 @@ export default function ProjectList() {
       title: "",
       element: <ProjectModal currentState={ix} />,
       showOnlyBody: true,
-      width: "1150px",
+      width: "1270px",
       height: "697px",
     });
   }, []);
