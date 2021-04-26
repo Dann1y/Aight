@@ -116,7 +116,7 @@ const RightBox = styled.div`
 
 const SkillWrap = styled(motion.div)`
   display: flex;
-  width: 70%;
+  width: 80%;
   justify-content: space-between;
   margin-top: 3%;
 `;
