@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { DESC_LIST } from "utils/constants";
-import Fade from "react-reveal/Fade";
 import { motion } from "framer-motion";
 import { useIntersection } from "utils/hooks/use-intersection";
 import aboutMotions from "motions/about.motion";
@@ -21,13 +20,13 @@ export default function Third() {
         return (
           <ContentWrapper>
             <Content variants={aboutMotions.aboutText}>
-              I know what is trendy and I do.
+              I know what is trendy and I do. I will prove it through the way I
+              work.
             </Content>
             <Content variants={aboutMotions.aboutText}>
-              I will prove it through the way I work.
+              Communicates well and results are good.
             </Content>
             <Content variants={aboutMotions.aboutText}>
-              Communicates well and results are good. <br />
               You've never seen anyone as cool as me😎
             </Content>
           </ContentWrapper>
@@ -36,11 +35,9 @@ export default function Third() {
         return (
           <ContentWrapper>
             <Content variants={aboutMotions.aboutText}>
-              Everyone makes mistakes.
+              Everyone makes mistakes. And it's divided into two categories:
             </Content>
             <Content variants={aboutMotions.aboutText}>
-              And it's divided into two categories:
-              <br />
               fix mistakes or keep making mistakes.
             </Content>
             <Content variants={aboutMotions.aboutText}>
@@ -103,8 +100,6 @@ const Positioner = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: url("background/d.png");
-  background-size: cover; */
 `;
 
 const Wrapper = styled.div`
@@ -164,6 +159,6 @@ const Content = styled(motion.div)`
   height: 70%;
   text-align: center;
   color: #fff;
-  font-size: 3.2vh;
+  font-size: 2.5vh;
   font-weight: 100;
 `;

@@ -16,8 +16,14 @@ const returnSha = () => [
     Our club is the most popular in our school.
   </Desc>,
   <Desc variants={aboutMotions.aboutText}>
-    Olio was released as an internal project in the club. We have a blog too!
-    Click Here.
+    Olio was released as an internal project in the club. We have a blog too!{" "}
+    <a
+      target="_blank"
+      href={"https://medium.com/ha-s"}
+      rel="noopener noreferrer"
+    >
+      Click Here.
+    </a>
   </Desc>,
 ];
 

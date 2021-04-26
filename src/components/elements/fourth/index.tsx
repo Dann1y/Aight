@@ -33,8 +33,6 @@ const Positioner = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: url("background/e.png");
-  background-size: cover; */
 
   div {
     font-size: 8vh;

@@ -345,8 +345,8 @@ const icons: IconList = {
     ),
   },
   email: {
-    width: 50,
-    height: 50,
+    width: 30,
+    height: 30,
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

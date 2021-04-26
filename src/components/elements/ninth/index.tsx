@@ -34,6 +34,9 @@ const returnActivity = () => [
   <Desc variants={aboutMotions.aboutText}>
     Singapore ConnecTechAsia 2019 참여 (2019.06.20.)
   </Desc>,
+  <Desc variants={aboutMotions.aboutText}>
+    광주소프트웨어마이스터고등학교 입학 (2019.03.04.)
+  </Desc>,
 ];
 
 export default function Ninth() {

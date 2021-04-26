@@ -37,7 +37,7 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
-const ImageGallery = () => {
+const ImageGallery: React.FC = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
@@ -57,13 +57,13 @@ const ImageGallery = () => {
         src={myImages[imageIndex]}
         custom={direction}
         variants={variants}
-        initial="enter"
-        animate="center"
-        exit="exit"
-        transition={{
-          x: { type: "spring", stiffness: 150, damping: 30 },
-          opacity: { duration: 0.5 },
-        }}
+        // initial="enter"
+        // animate="center"
+        // exit="exit"
+        // transition={{
+        //   x: { type: "spring", stiffness: 150, damping: 30 },
+        //   opacity: { duration: 0.5 },
+        // }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={1}
@@ -86,6 +86,7 @@ const ImageCard = styled(motion.img)`
   height: 100%;
   border-radius: 50%;
   cursor: pointer;
+  transition: all 2s;
 `;
 
 export default ImageGallery;

@@ -6,6 +6,7 @@ import aboutMotions from "motions/about.motion";
 import { Mask } from "components/GlobalStyles";
 import Tada from "react-reveal/Tada";
 import ImageGallery from "components/image-gallery";
+import Pulse from "react-reveal";
 
 export default function Fifth() {
   const sectionRef = useRef();
@@ -20,19 +21,21 @@ export default function Fifth() {
       initial="hidden"
       animate={visible ? "visible" : "hidden"}
     >
-      <Notice variants={aboutMotions.title}>Drag the image!⬇</Notice>
-      <ImageContainer>
-        <ImageGallery />
-      </ImageContainer>
+      <Notice variants={aboutMotions.title}>← Drag the image →</Notice>
+      <Pulse>
+        <ImageContainer variants={aboutMotions.aboutText}>
+          <ImageGallery />
+        </ImageContainer>
+      </Pulse>
       <Mask h={11} style={{ padding: "0 6vh" }}>
         <Tada>
           <motion.h1 variants={aboutMotions.subText}>I'm Dann1y</motion.h1>
         </Tada>
       </Mask>
       <motion.div variants={aboutMotions.aboutContainer}>
-        <motion.h2 variants={aboutMotions.aboutText}>
+        <Desc variants={aboutMotions.aboutText}>
           Uh.. Just call me Danny 😉
-        </motion.h2>
+        </Desc>
       </motion.div>
     </Positioner>
   );
@@ -50,25 +53,35 @@ const Positioner = styled(motion.div)`
     font-size: 8vh;
     color: #fff;
   }
-
-  h2 {
-    color: #fff;
-    font-weight: 100;
-  }
 `;
 
 const Notice = styled(motion.h2)`
   color: #fff;
   font-size: 2vh;
-  font-weight: 300;
+  font-weight: bold;
   margin: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(24, 210, 224, 1) 20%,
+    rgba(243, 18, 254, 1) 100%
+  );
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
-const ImageContainer = styled.div`
+const Desc = styled(motion.h2)`
+  color: #fff;
+  font-weight: 100;
+`;
+
+const ImageContainer = styled(motion.div)`
   width: 30vw;
   height: 55vh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5vh;
 `;
