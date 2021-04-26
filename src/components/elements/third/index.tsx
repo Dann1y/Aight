@@ -104,7 +104,7 @@ const Positioner = styled(motion.div)`
 
 const Wrapper = styled.div`
   width: 50%;
-  height: 50%;
+  height: 40%;
 
   display: flex;
   flex-direction: column;
