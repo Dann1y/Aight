@@ -13,13 +13,13 @@ export const Mask = styled(motion.div)<MaskProps>`
 
 export function GitIcon() {
   return (
-    <GitPositioner>
+    <ButtonPositioner>
       <Icon name="github" />
-    </GitPositioner>
+    </ButtonPositioner>
   );
 }
 
-const GitPositioner = styled.div`
+const ButtonPositioner = styled.div`
   width: 250px;
   height: 70px;
   display: flex;

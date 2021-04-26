@@ -3,8 +3,9 @@ import styled from "@emotion/styled";
 import { PROJECT_LIST } from "utils/constants";
 import Image from "next/image";
 import { mockImages } from "utils/image-data";
-import Icon from "components/icon";
 import { GitIcon } from "components/GlobalStyles";
+import Link from "next/link";
+import Icon from "components/icon";
 
 interface ProjectModalProps {
   currentState: number;
@@ -29,9 +30,25 @@ export default function ProjectModal(props: ProjectModalProps) {
           <InfoWrapper>
             <Role>{PROJECT_LIST[currentState].role}</Role>
             <Desc>{PROJECT_LIST[currentState].desc}</Desc>
-            <Git>
-              <GitIcon />
-            </Git>
+            <Footer>
+              <a
+                target="_blank"
+                href={PROJECT_LIST[currentState].github}
+                rel="noopener noreferrer"
+              >
+                <GitIcon />
+              </a>
+              <a
+                target="_blank"
+                href={PROJECT_LIST[currentState].url}
+                rel="noopener noreferrer"
+              >
+                <NewPage>
+                  <Icon name="browse" />
+                  Open as a page
+                </NewPage>
+              </a>
+            </Footer>
           </InfoWrapper>
         </RightCard>
       </Wrapper>
@@ -125,9 +142,32 @@ const Desc = styled.h3`
   margin: 3vh 0;
 `;
 
-const Git = styled.div`
+const Footer = styled.div`
   width: 100%;
   height: 20%;
   display: flex;
+  justify-content: space-between;
+`;
+
+const NewPage = styled.div`
+  width: 250px;
+  height: 70px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  cursor: pointer;
+  border: 4px solid #000;
+  border-radius: 25px;
+  transition: all 0.5s;
+  color: #000;
+  font-size: 2.3vh;
+  font-weight: bold;
+
+  :hover {
+    height: 75px;
+    transition: all 0.3s;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px,
+      rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px,
+      rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+  }
 `;
