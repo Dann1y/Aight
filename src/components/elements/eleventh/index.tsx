@@ -47,7 +47,7 @@ export default function Eleventh() {
             onClick={() => handleClickEmail()}
             variants={aboutMotions.aboutText}
           >
-            {text ? "Email" : "skypedanny@naver.com"}
+            {text ? "Email" : "leedanny0102@gmail.com"}
           </Item>
           <a
             target="_blank"
