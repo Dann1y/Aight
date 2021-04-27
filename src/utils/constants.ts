@@ -2,7 +2,8 @@ export const PROJECT_LIST = [
   {
     title: "Bridged",
     role: "Front-End Developer",
-    desc: "Bridged에 Opensource contributor로 기여중입니다. \n 안녕",
+    desc:
+      "Bridged에 Opensource contributor로 기여중입니다. Page UI 구성 등 다양한 사람들과 소통하고 협업하며 매주 새로운 경험을 하고 있습니다!",
     etc: "Opensource Contributing",
     image: "logo-image/Bridged.png",
     github: "https://github.com/bridgedxyz",
