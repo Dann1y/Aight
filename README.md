@@ -5,7 +5,8 @@
 ## 🤔Why Aight?
 "Aight" comes from the word "All right"
 
-The message I want to get across to the public is *"Aight!,Dann1y can do whatever you want. I'm ready for you guys😉"*
+The message I want to get across to the public is<br />
+*"Aight!,Dann1y can do whatever you want. I'm ready for you guys😉"*
 <img src="https://7esl.com/wp-content/uploads/2019/11/Aight-1.jpg" />
 
 
