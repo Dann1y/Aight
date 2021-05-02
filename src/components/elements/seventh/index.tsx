@@ -33,14 +33,16 @@ export default function Seventh() {
       initial="hidden"
       animate={visible ? "visible" : "hidden"}
     >
-      <Pulse>
-        <Desc variants={aboutMotions.subText}>
-          <TextTransition
-            text={TEXTS[index % TEXTS.length]}
-            springConfig={presets.wobbly}
-          />
-        </Desc>
-      </Pulse>
+      <Wrapper>
+        <Pulse>
+          <Desc variants={aboutMotions.subText}>
+            <TextTransition
+              text={TEXTS[index % TEXTS.length]}
+              springConfig={presets.wobbly}
+            />
+          </Desc>
+        </Pulse>
+      </Wrapper>
     </Positioner>
   );
 }
@@ -48,6 +50,13 @@ export default function Seventh() {
 const Positioner = styled(motion.div)`
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Wrapper = styled(motion.div)`
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
