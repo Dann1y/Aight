@@ -1,10 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { useIntersection } from "utils/hooks/use-intersection";
 import aboutMotions from "motions/about.motion";
 import { Mask } from "components/GlobalStyles";
-import TextTransition, { presets } from "react-text-transition";
 
 export default function Eleventh() {
   const sectionRef = useRef();

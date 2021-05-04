@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import aboutMotions from "motions/about.motion";
 import { useIntersection } from "utils/hooks/use-intersection";
+import { Mask } from "components/GlobalStyles";
 
 export default function Second() {
   const sectionRef = useRef();
@@ -32,10 +33,6 @@ export default function Second() {
   );
 }
 
-interface MaskProps {
-  h: number;
-}
-
 const Positioner = styled(motion.div)`
   width: 100vw;
   height: 100vh;
@@ -44,18 +41,11 @@ const Positioner = styled(motion.div)`
   align-items: center;
   justify-content: center;
   position: relative;
-  /* background-image: url("background/c.png");
-  background-size: cover; */
 
   h3 {
     color: #fff;
     font-weight: 100;
   }
-`;
-
-const Mask = styled(motion.div)<MaskProps>`
-  height: ${(p) => p.h}vh;
-  overflow: hidden;
 `;
 
 const Sentence = styled(motion.h2)`
