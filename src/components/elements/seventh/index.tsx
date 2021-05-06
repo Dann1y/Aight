@@ -20,10 +20,7 @@ export default function Seventh() {
   });
 
   useEffect(() => {
-    const intervalId = setInterval(
-      () => setIndex((index) => index + 1),
-      3000 // every 3 seconds
-    );
+    const intervalId = setInterval(() => setIndex((index) => index + 1), 1700);
     return () => clearTimeout(intervalId);
   }, []);
 
