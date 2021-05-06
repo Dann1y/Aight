@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { componentsReturn } from "utils/toolkit";
+import Image from "next/image";
 
 export default function MappingContainer() {
   return (
     <Positioner>
+      <Image layout="fill" src="/background.png" alt="background" />
       {componentsReturn.map((pages, ix) => (
         <div key={ix} className="section">
           {pages}
@@ -17,6 +19,4 @@ export default function MappingContainer() {
 const Positioner = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url("/background.png");
-  background-size: cover;
 `;
