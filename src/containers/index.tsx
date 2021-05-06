@@ -6,7 +6,12 @@ import Image from "next/image";
 export default function MappingContainer() {
   return (
     <Positioner>
-      <Image layout="fill" src="/background.png" alt="background" />
+      <Image
+        quality={100}
+        layout="fill"
+        src="/background.png"
+        alt="background"
+      />
       {componentsReturn.map((pages, ix) => (
         <div key={ix} className="section">
           {pages}
