@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { useModalContext } from "utils/contexts/modal-context";
 import ModalInfo from "utils/models/modal-info";
 import styled from "@emotion/styled";
-import useLockBodyScroll from "utils/hooks/use-lock-body-scroll";
 
 interface ModalProps {
   info: ModalInfo;
@@ -35,8 +34,6 @@ const Modal = (props: ModalProps) => {
   const onModalInnerClick = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
   }, []);
-
-  useLockBodyScroll();
 
   return (
     <ModalBackground onClick={onClose}>
