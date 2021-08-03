@@ -2,6 +2,9 @@
 
 <strong>This is my website portfolio😸 </strong>
 
+Designed by [4YJ](https://github.com/Nayejun)
+
+
 ## 🤔Why Aight?
 "Aight" comes from the word "All right"
 
@@ -26,7 +29,7 @@ The message I want to get across to the public is<br />
 * Contact me
 
 ## 👨🏻‍💻Deloy
-I deploy this project on [Vercel]("https://vercel.com/")
+I deploy this project on [Vercel](https://vercel.com/)
 
 ⬇Click the link!⬇
 
