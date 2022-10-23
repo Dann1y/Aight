@@ -1,13 +1,20 @@
-import React from "react";
 import styled from "styled-components";
+import { MyInfo } from "../components";
 
 export function Contents() {
-  return <Positioner></Positioner>;
+  return (
+    <Positioner>
+      <MyInfo />
+      <MyInfo />
+      <MyInfo />
+      <MyInfo />
+      <MyInfo />
+      <MyInfo />
+    </Positioner>
+  );
 }
 
 const Positioner = styled.div`
   width: 100%;
-  padding: 10px;
+  height: 100%;
 `;
-
-const Title = styled.div``;

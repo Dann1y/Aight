@@ -24,5 +24,5 @@ const Positioner = styled.div`
   justify-content: center;
   width: 100%;
   padding: 10px;
-  border: 1px solid;
+  border: 1px solid #ffffff;
 `;
