@@ -14,45 +14,44 @@ export function Header() {
     <Positioner>
       <Wrapper>
         <ProgressBar style={{ scaleX }} />
+        <Logo>Aight</Logo>
       </Wrapper>
     </Positioner>
   );
 }
 
-const Positioner = styled.div`
+const Positioner = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 40px;
-  padding: 20px;
-  border: 1px solid red;
-  background-color: #ffffff;
-  /* background-color: #000000; */
-  z-index: 50;
+  height: 70px;
+  background-color: #000000;
+  z-index: 9999;
+  border: 1px solid;
 `;
 
 const Wrapper = styled.div`
   position: relative;
-  background-color: green;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  width: 80%;
   height: 100%;
+`;
+
+const Logo = styled(motion.h2)`
+  cursor: pointer;
 `;
 
 const ProgressBar = styled(motion.div)`
   position: fixed;
-  top: 0;
+  top: 60px;
   left: 0;
   right: 0;
   height: 8px;
-  border-radius: 5px;
-  background: linear-gradient(
-    90deg,
-    rgba(213, 115, 228, 1) 0%,
-    rgba(121, 9, 110, 1) 41%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  border-radius: 0 5px 5px 0;
+  background: #dda0dd;
   transform-origin: 0%;
 `;
