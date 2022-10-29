@@ -1,12 +1,24 @@
 import styled from "styled-components";
-import { MyInfo, MyMoto } from "../components";
+import {
+  Experience,
+  GetInTouchMe,
+  MyInfo,
+  MyValues,
+  Project,
+  Work,
+  Write,
+} from "../components";
 
 export function Contents() {
   return (
     <Positioner>
       <MyInfo />
-      <MyMoto />
-      <MyInfo />
+      <MyValues />
+      <Work />
+      <Project />
+      <Write />
+      <Experience />
+      <GetInTouchMe />
     </Positioner>
   );
 }
@@ -22,7 +34,8 @@ const Positioner = styled.div`
   /* background: hsl(0, 0%, 14%); */
   /* background: hsl(0, 0%, 10%); */
 
-  background: linear-gradient(43deg, #4158d0, #c850c0, #ffcc70);
+  /* background: linear-gradient(43deg, #4158d0, #c850c0, #ffcc70); */
+  background: linear-gradient(43deg, #4158d0, #dda0dd, #ffcc70);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 
