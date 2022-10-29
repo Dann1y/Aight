@@ -52,14 +52,24 @@ const Positioner = styled.section`
 `;
 
 const CardItem = styled(Card)`
-  flex: 1;
-  flex-grow: 1;
+  width: 100%;
   height: 100%;
   padding: 20px;
   cursor: pointer;
   background-color: #ffc8dd;
   word-break: keep-all;
   text-align: center;
+  transition: ease-in 0.3s;
+
+  transform-origin: 50% 50% 0;
+
+  &:hover {
+    width: 90%;
+    height: 90%;
+    transition: ease-out 0.3s;
+    transform: perspective(1200px) translateX(0px) translateY(0px) scale(1)
+      rotate(0deg) rotateX(0deg) rotateY(0deg) translateZ(0px);
+  }
 
   h2 {
     color: #062726;
