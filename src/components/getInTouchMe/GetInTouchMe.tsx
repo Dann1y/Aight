@@ -15,7 +15,11 @@ export const GetInTouchMe = () => {
           </a>
         </ContactMethod>
         <ContactMethod bgColor="#ffc8dd">
-          <a href="mailto: leedanny0102@gmail.com">
+          <a
+            href="https://topmate.io/danny"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <Image src="/video.svg" width="50px" height="50px" alt="email" />
           </a>
         </ContactMethod>

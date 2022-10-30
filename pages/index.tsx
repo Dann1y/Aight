@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <Layout>
       <Head>
         <title>Aight</title>
-        <meta name="description" content="Dann1y's portfolio website" />
+        <meta name="description" content="Dann1y's portfolio website - Aight" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Contents />
