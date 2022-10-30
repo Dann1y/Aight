@@ -6,6 +6,7 @@ type CardProps = {
   width?: string;
   height?: string;
   children?: ReactNode;
+  onClick?: () => void;
 };
 
 export const Card = ({ children, ...props }: CardProps) => {
